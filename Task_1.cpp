@@ -1,33 +1,34 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 void input (float temp[7][4]){
     for (int i = 0; i < 7; i++){
-        for (int j = 0; j < 4; j++){
+        
             switch (i){
-                case 0: cout << "Enter temprature " << j+1 << " for monday: ";
-                cin >> temp[i][j];
+                case 0: cout << "Enter temprature for monday: ";
+                cin >> temp[i][0] >> temp[i][1] >> temp[i][2] >> temp[i][3] ;
                 break;
-                case 1: cout << "Enter temprature " << j+1 << " for tuesday: ";
-                cin >> temp[i][j];
+                case 1: cout << "Enter temprature for tuesday: ";
+                cin >> temp[i][0] >> temp[i][1] >> temp[i][2] >> temp[i][3] ;
                 break;
-                case 2: cout << "Enter temprature " << j+1 << " for wednesday: ";
-                cin >> temp[i][j];
+                case 2: cout << "Enter temprature for wednesday: ";
+                cin >> temp[i][0] >> temp[i][1] >> temp[i][2] >> temp[i][3] ;
                 break;
-                case 3: cout << "Enter temprature " << j+1 << " for thursday: ";
-                cin >> temp[i][j];
+                case 3: cout << "Enter temprature for thursday: ";
+                cin >> temp[i][0] >> temp[i][1] >> temp[i][2] >> temp[i][3] ;
                 break;
-                case 4: cout << "Enter temprature " << j+1 << " for friday: ";
-                cin >> temp[i][j];
+                case 4: cout << "Enter temprature for friday: ";
+                cin >> temp[i][0] >> temp[i][1] >> temp[i][2] >> temp[i][3] ;
                 break;
-                case 5: cout << "Enter temprature " << j+1 << " for saturday: ";
-                cin >> temp[i][j];
+                case 5: cout << "Enter temprature for saturday: ";
+                cin >> temp[i][0] >> temp[i][1] >> temp[i][2] >> temp[i][3] ;
                 break;
-                case 6: cout << "Enter temprature " << j+1 << " for sunday: ";
-                cin >> temp[i][j];
+                case 6: cout << "Enter temprature for sunday: ";
+                cin >> temp[i][0] >> temp[i][1] >> temp[i][2] >> temp[i][3] ;
                 break;
             }
-        }
+        
     }
 }
 
@@ -56,25 +57,27 @@ float lowestTemp(float temp[7][4]){
 } 
 
 void averageTemp(float temp[7][4]){
+    cout << setw(15) << left << setw(15) << left << "Day" << setw(10) << "Avg. Temp" << endl;
     for(int i = 0; i < 7; i++){
         float sum = 0;
         for (int j = 0; j < 4; j++){
             sum += temp[i][j];
         }
+        
         switch (i){
-                case 0: cout << "Average temprature of Monday= " << sum/4;
+                case 0: cout << setw(15) << left << "Monday" << sum/4 << endl;
                 break;
-                case 1: cout << "Average temprature of Tuesday= " << sum/4;
+                case 1: cout << setw(15) << left << "Tuesday" << sum/4 << endl;
                 break;
-                case 2: cout << "Average temprature of Wednesday= " << sum/4;
+                case 2: cout << setw(15) << left << "Wednesday" << sum/4 << endl;
                 break;
-                case 3: cout << "Average temprature of Thursday= " << sum/4;
+                case 3: cout << setw(15) << left << "Thursday" << sum/4 << endl;
                 break;
-                case 4: cout << "Average temprature of Friday= " << sum/4;
+                case 4: cout << setw(15) << left << "Friday" << sum/4 << endl;
                 break;
-                case 5: cout << "Average temprature of Saturday= " << sum/4;
+                case 5: cout << setw(15) << left << "Saturday" << sum/4 << endl;
                 break;
-                case 6: cout << "Average temprature of Sunday= " << sum/4;
+                case 6: cout << setw(15) << left << "Sunday" << sum/4 << endl;
                 break;
             }
     }
@@ -85,9 +88,17 @@ int main() {
     float temp [7][4];
     
     input (temp);
-    highestTemp(temp);
-    lowestTemp(temp);
+    cout << endl;
+    
+    cout << "highest temprature of the week= " << highestTemp(temp) << endl;
+    cout << endl;
+    
+    cout << "lowest temprature of the week= " << lowestTemp(temp) << endl;
+    cout << endl;
+    
     averageTemp(temp);
+    cout << endl;
+    
     
     
     
