@@ -99,8 +99,5 @@ int main() {
     averageTemp(temp);
     cout << endl;
     
-    
-    
-    
     return 0;
 }
